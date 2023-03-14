@@ -20,11 +20,13 @@ def frenchToEnglish():
     return english_text
 
 @app.route("/")
-def renderIndexPage(request):
-    context = {}
-    return render(request, 'templates/index.html', context)
+def renderIndexPage():
+    return render_template('index.html')
 
-    # 2nd method ; using Flask -  return render_template('templates/index.html')
+    # -- 2nd method ; using Django -
+    # def renderIndexPage(request):
+    #     context={}
+    #     return render(request, 'templates/index.html', context)'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
